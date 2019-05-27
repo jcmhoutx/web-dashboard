@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Latitude Dashboard</title>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- Use Bootstrap CDN with Lux theme from Bootswatch (https://bootswatch.com/lux/) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-hVpXlpdRmJ+uXGwD5W6HZMnR9ENcKVRn855pPbuI/mwPIEKAuKgTKgGksVGmlAvt" crossorigin="anonymous">
+</head>
+
+<!-- Navbar (adapted from code at https://getbootstrap.com/docs/4.3/components/navbar/) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html">
+            <img src="./images/logo.jpg" width="35" height="35" class="d-inline-block align-center" alt="logo">
+            LATITUDE
+    </a>
+    <div class="dropdown">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Comparison <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./data.html">Data <span class="sr-only">(current)</span></a>
+          </li>    
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./temperature.html">Temperature</a>
+            <a class="dropdown-item" href="./humidity.html">Humidity</a>   
+            <a class="dropdown-item" href="./cloudiness.html">Cloudiness</a>
+            <a class="dropdown-item" href="./wind.html">Wind Speed</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<body>
+  <!-- Create container for page elements -->
+  <div class="container-fluid">
+      <div class="row pt-5">
+        <div class="col-sm-7">
+            <h2>The Effects of Latitude on Weather</h2>
+            <!-- Image from https://pixabay.com/illustrations/globe-earth-coordinates-spherical-523207/ under Pixabay license -->
+            <img src="./images/globe.jpg" class="rounded float-left mr-2" alt="globe">
+            <p style="color:black;font-size:18px">
+                To gain insight regarding the effects of geographical latitude on weather conditions, I performed an analysis on weather conditions 
+                relative to latitude. First, a random series of latitude and longitude values were generated, then those values were used to determine 
+                the nearest city to those coordinates via a Python library, <a href="https://github.com/wingchen/citipy" style="color:dodgerblue;">citypy</a>. With the list of 
+                identified cities, I was able to return the current weather conditions for those locations over a wide range of latitudes by  
+                leveraging the <abbr title="Application Programming Interface">API</abbr> at <a href="https://openweathermap.org/api" style="color:dodgerblue;">openweathermap.org</a>.
+                <br><br>
+                This site contains plots (created using <a href="https://matplotlib.org/index.html" style="color:dodgerblue;">Matplotlib</a>) to 
+                visualize the results of my analysis, as well as information regarding the underlying data. While the results may help to provide 
+                some insights about weather variance with latitude, several caveats apply. Most notably, this data is only from one date. Not only 
+                does this indicate that this particular day could be an outlier, but results could vary widely over the course of the year, as 
+                seasons change, as well as from year to year.                   
+            </p>
+        </div>
+        <div class="col-sm-5 bg-warning">
+            <h2>Visualizations</h2>
+            <a href="./temperature.html"><img src="./images/lat_temp.png" width="275" height="183" class="pb-1" alt="temp"></a>
+            <a href="./humidity.html"><img src="./images/lat_hum.png" width="275" height="183" class="pb-1" alt="humid"></a>
+            <a href="./wind.html"><img src="./images/lat_wind.png" width="275" height="183" class="pb-1" alt="wind"></a>
+            <a href="./cloudiness.html"><img src="./images/lat_cld.png" width="275" height="183" class="pb-1" alt="cloud"></a>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>
