@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Latitude Dashboard</title>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- Use Bootstrap CDN with Lux theme from Bootswatch (https://bootswatch.com/lux/) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-hVpXlpdRmJ+uXGwD5W6HZMnR9ENcKVRn855pPbuI/mwPIEKAuKgTKgGksVGmlAvt" crossorigin="anonymous">
+</head>
+
+<!-- Navbar (adapted from code at https://getbootstrap.com/docs/4.3/components/navbar/) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html">
+            <img src="./images/logo.jpg" width="35" height="35" class="d-inline-block align-center" alt="logo">
+            LATITUDE
+    </a>
+    <div class="dropdown">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./comp.htm">Comparison <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./data.html">Data <span class="sr-only">(current)</span></a>
+          </li>    
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="./data.htm" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./temperature.html">Temperature</a>
+            <a class="dropdown-item" href="./humidity.html">Humidity</a>   
+            <a class="dropdown-item" href="./cloudiness.html">Cloudiness</a>
+            <a class="dropdown-item" href="./wind.html">Wind Speed</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<body>
+  <!-- Create container for page elements -->
+  <div class="container-fluid">
+      <div class="row pt-5">
+        <div class="col-sm-9">
+            <h2>Latitude vs. Humidity</h2>
+            <img src="./images/lat_hum.png" width="500" height="325" class="pb-1" alt="temp">
+            <p style="color:black;font-size:18px">
+                As may be seen in this plot, on the sampled date, humidity was notably higher in the northern latitudes than in the 
+                southern hemishphere. This may still be determined despite the presence of one essentially-impossible outlier -- 290% humidity 
+                (!) -- in the data obtained from the API.
+            </p>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>
